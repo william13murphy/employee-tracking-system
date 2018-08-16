@@ -1,0 +1,333 @@
+<head>
+	<link rel="stylesheet" href="https://ttcishare.com/sites/dev/BM/WebFolder/ets_style2.css" type="text/css">
+
+<!-- sp-utils references -->
+	<script src="../WebFolder/sp-utility/jquery-1.8.3.min.js"></script>
+	<script src="../WebFolder/sp-utility/sharepointplus-3.0.9.min.js"></script>
+	<script src="../WebFolder/sp-utility/jPoint_min.js"></script>
+	<script src="../WebFolder/sp-utility/jquery.SPServices-0.7.2.min.js"></script>
+	<script src="../WebFolder/sp-utility/jp-utility.js"></script>
+
+<!-- bootstrap, not required -->
+	<script src="../WebFolder/sp-utility/bootstrap.min.js"></script>
+	<link href="../WebFolder/sp-utility/bootstrap.min.css" rel="stylesheet">
+
+	<script src="../WebFolder/sp-utility/sb-admin-2.js"></script>
+	<link href="../WebFolder/sp-utility/sb-admin-2.css" rel="stylesheet">
+
+	<script src="../WebFolder/sp-utility/metisMenu.min.js"></script>
+	<link href="../WebFolder/sp-utility/metisMenu.min.css" rel="stylesheet">
+
+	<link href="../WebFolder/sp-utility/font-awesome.min.css" rel="stylesheet">
+
+<!-- DataTables references -->
+	<script src="../WebFolder/sp-utility/DataTables/media/js/jquery.dataTables.min.js"></script>
+	<link href="../WebFolder/sp-utility/DataTables/media/css/jquery.dataTables.css" rel="stylesheet">
+
+	<!-- DataTables tools, not required -->
+	<script src="../WebFolder/sp-utility/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+	<link href="../WebFolder/sp-utility/DataTables/extensions/TableTools/css/dataTables.tableTools.min.css" rel="stylesheet">
+
+	<!-- App references -->
+	<script src="../WebFolder/ets_app.js"></script>
+</head>
+
+<br>
+<div id="info"></div>
+<div class="header">
+	<img src="../WebFolder/Images/logo.png" class="logo">
+	<h1 id="etsTitle">Employee Tracking System</h1>
+	<button type="button" id="settings" class="btn btn-primary" onClick="javascript:adminModalItem()">Settings</button>
+
+	<div id="adminModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h3 id="dashTitle" class="modalHead">List Settings</h3><br>
+				</div><br>
+				<div id="admin-container">
+					<h4 id="adminTitle" >Add/Edit Field</h4>
+					<button type="button" id="addLocAdmin" class="btn btn-primary">Add Location</button>&nbsp <!-- onclick="javascript:addNewListItem('OfficeLocation');" -->
+					<button type="button" id="editLocAdmin" class="btn btn-info">Edit Location</button><br> <!-- onclick="javascript:editListItem('OfficeLocation');" -->
+					<button type="button" id="addSkillAdmin" class="btn btn-primary">Add Skill Set</button>&nbsp
+					<button type="button" id="editSkillAdmin" class="btn btn-info">Edit Skill Set</button><br>
+					<button type="button" id="addCertAdmin" class="btn btn-primary">Add Certification</button>&nbsp
+					<button type="button" id="editCertAdmin" class="btn btn-info">Edit Certification</button><br>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="closeRecord" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<a id="leaveLink" class="dashModal" href="#" onClick="">
+				<div class="row">
+					<div class="col-xs-3">
+						<i class="fa fa-plane fa-5x whiteText"></i>
+					</div>
+					<div class="col-xs-9 text-right">
+						<h3 class="panel-title whiteText">On Leave!</h3>
+						<div id="leaveCount" class="huge whiteText"></div>
+					</div>
+				</div>
+		</div>
+		<div class="panel-footer">
+				<span class="pull-left">View Details</span>
+				<span class="pull-right">
+					<i class="fa fa-arrow-circle-right"></i>
+				</span>
+				<div class="clearfix"></div>
+		</div>
+			</a>
+	</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+	<div class="panel panel-green">
+		<div class="panel-heading">
+			<a id="locationLink" class="dashModal" href="#" onClick="javascript:dashModalItem()">
+				<div class="row">
+					<div class="col-xs-3">
+						<i class="fa fa-home fa-5x whiteText"></i>
+					</div>
+					<div class="col-xs-9 text-right">
+						<h3 class="panel-title whiteText">Location!</h3>
+						<div id="locCount"class="huge whiteText"></div>
+					</div>
+				</div>
+		</div>
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span>
+					<span class="pull-right">
+						<i class="fa fa-arrow-circle-right"></i>
+					</span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+	</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+	<div class="panel panel-yellow">
+		<div class="panel-heading">
+			<a id="skillsLink" class="dashModal" href="#" onClick="javascript:dashModalItem()">
+				<div class="row">
+					<div class="col-xs-3">
+						<i class="fa fa-pencil fa-5x whiteText"></i>
+					</div>
+				
+					<div class="col-xs-9 text-right">
+						<h3 class="panel-title whiteText">Skill Set!</h3>
+						<div id="skillCount" class="huge whiteText"></div>
+					</div>
+				</div>
+		</div>
+		
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span>
+					<span class="pull-right">
+						<i class="fa fa-arrow-circle-right"></i>
+					</span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+	</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+	<div class="panel panel-red">
+		<div class="panel-heading">
+			<a id="certLink" class="dashModal" href="#" onClick="javascript:dashModalItem()">
+				<div class="row">
+					<div class="col-xs-3">
+						<i class="fa fa-folder-open fa-5x whiteText"></i>
+					</div>
+				
+				<div class="col-xs-9 text-right">
+					<h3 class="panel-title whiteText">Certification!</h3>
+					<div id="certCount" class="huge whiteText"></div>
+				</div>
+			</div>
+		</div>
+		
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span>
+					<span class="pull-right">
+						<i class="fa fa-arrow-circle-right"></i>
+					</span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+	</div>
+	
+	<div id="add">
+		<button type="button" id="addNew" class="btn btn-primary" onClick="javascript:addNewListItem('employeeRecord')">Add New</button>
+	</div>
+</div>
+
+<div id="dashModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 id="dashTitle" class="modalHead">Quick View</h3>
+			</div>
+			<div id="onLeaveContainer"></div>
+			<div id="locationContainer"></div>
+			<div id="skillContainer"></div>
+			<div id="certContainer"></div>
+			<div class="modal-footer">
+				<button type="button" id="closeDash" class="btn btn-primary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p><div id="EtsContainer"></div></p>
+
+<div id="viewModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h3 id="title" class="modalHead">View Employee Record</h3>
+				<button type="button" id="editRecord" class="btn btn-primary">Edit Record</button><br>
+			</div><br>
+			
+			<div class="modal-body">
+				<div class="container">	
+					<table id="tableOne" class="floatLeft">
+						<tr>
+							<td>	
+								<div id="empInfo">
+									<a role="button" data-toggle="collapse" href="#expandContainer" aria-expanded="false" aria-controls="expandContainer">
+										<h4 id="empTitle">Employee Information<i class="fa fa-plus-circle expand"></i></h4>
+									</a>	
+									<div class="collapse" id="expandContainer">
+										<div class="floatLeft">
+											<label for="empName" class="label label-primary">Employee Name:</label>
+												<input id="empName" class="input" size="25" readonly></input><br>
+											<label for="address" class="label label-primary">Address #1:</label>
+												<input id="address" class="input" size="25" readonly></input><br>
+											<label for="address2" class="label label-primary">Address #2:</label>
+												<input id="address2" class="input" size="25" readonly></input><br>
+											<label for="city" class="label label-primary">City, State, Zip:</label>
+												<input id="city" class="input" size="25" readonly></input><br>
+										</div>
+										
+										<div class="inlineBlock">
+											<label for="empId" class="label label-primary">Employee ID:</label>
+												<input id="empId" class="input" size="12" readonly></input><br>
+											<label for="empBirth" class="label label-primary">Birth Date:</label>
+												<input id="empBirth" class="input" size="12" readonly></input><br>
+											<label for="empHire" class="label label-primary">Hire Date:</label>
+												<input id="empHire" class="input" size="12" readonly></input>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>        	
+								<div id="compInfo">
+									<a role="button" data-toggle="collapse" href="#expandContainer3" aria-expanded="false" aria-controls="expandContainer3">
+										<h4 id="compTitle">Company Information<i class="fa fa-plus-circle expand3"></i></h4>
+									</a>
+									
+									<div class="collapse" id="expandContainer3">
+										<div class="floatLeft">
+											<label for="office" class="label label-primary">Location:</label>
+												<input id="office" class="input" size="25" readonly></input><br>
+											<label for="salary" class="label label-primary">Salary:</label>
+												<input id="salary" class="input" size="25" readonly></input><br>
+											<label for="contract" class="label label-primary">Contract:</label>
+												<textarea id="contract" readonly></textarea>
+										</div>
+										
+										<div class="inlineBlock">
+											<label for="employed" class="label label-primary">Currently Employed:</label>
+												<input id="employed" class="input" size="12" readonly></input><br>
+											<label for="leave" class="label label-primary">On Leave:</label>
+												<input id="leave" class="input" size="12" readonly></input><br>
+											<label for="dateLeave" class="label label-primary">Date Leave:</label>
+												<input id="dateLeave" class="input" size="12" readonly></input><br>
+											<label for="dateReturn" class="label label-primary">Date Return:</label>
+												<input id="dateReturn" class="input" size="12" readonly></input><br>
+											<label for="position" class="label label-primary" id="positionLabel">Position:</label>
+												<textarea id="position" readonly></textarea><br>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table id="tableTwo" class="inlineBlock">
+						<tr>
+							<td>
+								<div id="contactInfo">
+									<a role="button" data-toggle="collapse" href="#expandContainer2" aria-expanded="false" aria-controls="expandContainer2">
+										<h4 id="contactTitle">Contact Information<i class="fa fa-plus-circle expand2"></i></h4>
+									</a>
+									<div class="collapse" id="expandContainer2">
+										<label for="home" class="label label-primary">Home Phone:</label>
+											<input id="home" class="input" size="30" readonly></input><br>
+										<label for="cell" class="label label-primary">Cell Phone:</label>
+											<input id="cell" class="input" size="30" readonly></input><br>
+										<label for="email" class="label label-primary">Email:</label>
+											<input id="email" class="input" size="30" readonly></input>
+									</div>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div id="addInfo">
+									<a role="button" data-toggle="collapse" href="#expandContainer4" aria-expanded="false" aria-controls="expandContainer4">
+										<h4 id="addTitle">Additional Information<i class="fa fa-plus-circle expand4"></i></h4>
+									</a>
+									
+									<div class="collapse" id="expandContainer4">
+										<label for="edu" class="label label-primary">Education:</label>
+											<input id="edu" class="input" size="30" readonly></input><br>
+										<label for="certi" class="label label-primary">Certification:</label>
+											<input id="certi" class="input" size="30" readonly></input><br>
+										<label for="skillset" class="label label-primary">Skill Set:</label>
+											<textarea id="skillset" readonly></textarea><br>
+									</div>
+								</div>
+							</td>		
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" id="closeRecord" class="btn btn-primary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	$(document).ready(function(){
+		loadLookUpData();
+		buildEmployeeRecordDataTable();
+		buildEmployeeLocationTable();
+		buildEmployeeSkillTable();
+		buildEmployeeLeaveDataTable();
+		buildEmployeeCertTable();
+		buildCountInfo();
+		dashModalItem();
+
+	});
+</script>

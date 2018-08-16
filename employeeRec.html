@@ -1,0 +1,88 @@
+Employee Record
+	picture, Lname, first name, gender, position, address, DOB, start date, phone #, location, contract, Education, skill set, salary, current employee
+	*		*		*			*			*		*		*	*			*		*			*			*		*		
+	
+	employeerecord
+		picture, lname, fname, gender, title, DOB, hiredate, address, homephone, cellphone, email, officelocation, contract, education, skillset, salary, currentemployee
+		
+		address 1
+		address 2
+		city 
+		state look up
+		zip code
+		on leave  (y/n)
+		contract (multiple)
+		
+		
+<!-- sp-utils references -->
+	<script src="../WebFolder/sp-utility/jquery-1.8.3.min.js"></script>
+	<script src="../WebFolder/sp-utility/sharepointplus-3.0.9.min.js"></script>
+	<script src="../WebFolder/sp-utility/jPoint_min.js"></script>
+	<script src="../WebFolder/sp-utility/jquery.SPServices-0.7.2.min.js"></script>
+	<script src="../WebFolder/sp-utility/jp-utility.js"></script>
+	<!-- bootstrap, not required -->
+	<script src="../WebFolder/sp-utility/bootstrap.min.js"></script>
+	<link href="../WebFolder/sp-utility/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- DataTables references -->
+	<script src="../WebFolder/sp-utility/DataTables/media/js/jquery.dataTables.min.js"></script>
+	<link href="../WebFolder/sp-utility/DataTables/media/css/jquery.dataTables.css" rel="stylesheet">
+	
+	
+$(document).ready(function(){
+	
+	 pageSetup();
+     buildAllDataTables(3);
+	 buildUSMap();
+	 $("#reportLoader").hide();
+	 $("#MainApp").show();
+	 buildStateLinks();
+     buildDataTableFiles();
+     buildDataTableAction();
+     buildDataTableLinks();
+     buildDataTableContacts();
+     buildHeader();
+     buildCalendar();
+});
+
+
+<h1 id="Files" style="display:none"><img src="../WebFolder/Images/FIles_Bar.png" /></h1>
+	<a  class="AddNewItem" style="display:none" href="javascript:addNewDoc()"><img src="../WebFolder/Images/AddNew_1.png" /></a>
+	<div id="Filter4Container"></div>
+
+
+
+<script>
+function buildDataTableFiles(){
+	var list = "Files";
+	var listcolumns = ["ID", "FileLeafRef", "Modified", "Modified By", "State", "Demo", "Description"];
+	//var cquery = "<Where><Eq><FieldRef Name='Demo' LookupId='TRUE' /><Value Type='Lookup'>"+ItemID+"</Value></Eq></Where><OrderBy><FieldRef Name='ID' Ascending='False' /></OrderBy>";    //where statement gets the lookup column of Demo and sets it = to ItemID 
+	var listItems = getDataItems(list, listcolumns, true);
+	var cleanTable = new Array();
+	
+	if (listItems!=undefined) { // only do this if data is returned...or else crashes...
+		for (var x=0;x<listItems.length;x++){
+			cleanTable[x] = new Array();
+			cleanTable[x]['ID'] = listItems[x]["ID"];
+			cleanTable[x]['FileLeafRef'] = buildDataDocLink (list, SP_GetStr(listItems[x]["FileLeafRef"])); //build parameter call buildDataDocLink the SP GetStr just gets the string name of the document and not the ID that SharePoint attaches it with.
+			cleanTable[x]['Modified'] = listItems[x]["Modified"]; 
+			cleanTable[x]['Modified By'] = listItems[x]["Modified By"];
+			cleanTable[x]['State'] = listItems[x]["State"];
+			cleanTable[x]['Demo'] = listItems[x]["Demo"];
+			cleanTable[x]['Description'] = listItems[x]["Description"];
+
+
+		}
+		
+		var cleanColumns = ["FileLeafRef", "Modified", "State", "Demo", "Description"];
+		var tableHeader = ["Name", "Modified", "State", "Demo", "Description"];
+
+		
+		var sortIndex = 0;
+		var sortDirection = "asc";
+		var containerID = "Filter4";  // Name of the DataTable Container
+
+		printTable(cleanTable, cleanColumns, tableHeader, sortIndex, sortDirection, containerID);
+	}
+}
+</script>

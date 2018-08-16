@@ -1,0 +1,272 @@
+#titleAreaBox, #sideNavBox {display: none;
+}
+
+#contentBox {margin-left:20px;
+		margin-right:20px;
+}
+
+#contentRow {padding-top: 0px;
+}
+
+#s4-titlerow {height:0px;
+		padding-bottom: 0px;
+    	padding-top: 0px;
+}
+
+.header {
+	height:120px;
+	padding: 0;
+	margin:0;
+	position:relative;
+}
+
+.logo{
+	float:left;
+	margin-bottom: -1em;
+}
+
+#etsTitle {font-size: 50px;
+	font-family: helvetica neue ;
+	font-weight: 700;
+	color: black;
+	position: relative;
+	bottom: -.4em;
+}
+
+#settings {
+	float: right;
+	position: relative;
+	right: 1em;
+	top: -.5em;
+}
+
+#addLocAdmin, #addSkillAdmin, #addCertAdmin {
+	margin-left: 1em;
+	margin-bottom: .5em;
+	margin-top: .5em;
+}
+
+.modalHead {font-family: helvetica neue ;
+		font-weight: 700;
+		text-align: center;
+		color: black;
+}
+
+h3.whiteText, .whiteText {
+	color: white;
+}
+
+#empTitle, #contactTitle, #compTitle, #addTitle, #leaveTitle, #locationTitle,
+#skillTitle, #certTitle, #adminTitle {font-family: helvetica neue ;
+		font-weight: 700;
+		text-align: left;
+		color: black;
+		background-color: #dddddd;
+		padding-left: .5em;
+}
+
+#addNew{
+	position:relative;
+	left: -72.8em;
+	margin-bottom: .5em;
+}
+
+#editRecord{
+	float:left;
+	margin-left: 1em;
+	margin-top: -1em;
+}
+
+.close{margin-right:-1.75em;}
+
+#top-container {
+		text-align: left;
+		/*height: 10em; */
+		height:1em;
+}
+
+#leave-container { text-align: left;
+	height: 13em;
+}
+
+#bottom-container{text-align: left;
+	/* height: 13em; */
+	/* height: 6em; */
+	height: 6em;
+
+}
+
+
+#empInfo, #compInfo { width:38em;
+		float: left;
+		text-align: right;
+}
+
+
+
+#contactInfo, #addInfo { width:25em;
+		display: inline-block;
+		margin-left: 1em;
+		text-align: right;
+		float: right;
+
+}
+
+.left {float:left;
+		margin-left: .8em;
+}
+
+.left-bottom { float:left;
+	margin-left: 3.45em;
+
+}
+
+.right { float:right;
+		display: inline-block;
+}
+
+.right-bottom{ float:right;
+		display: inline-block;
+		position: relative;
+		left: -2em;
+		top:-11em;
+	}
+
+#empId, #empName, #empBirth, #empHire, #home, #cell, #email, #address, #city,
+#position, #contract, #office, #edu, #certi, #skill, #salary, #employed, #leave
+#dateLeave, #dateReturn {display:inline;}
+
+.input{border:0px solid;
+}
+
+#contract {border: 0px solid;
+	overflow:hidden;
+	resize:none;
+	vertical-align: top;
+	height: 8em;
+	width:7em;
+	position:relative;
+	left:-6.6em;
+	margin-left:6.3em;
+	background-color: transparent;
+}
+
+#positionLabel{position:relative;
+}
+#position {border: 0px solid;
+	overflow:hidden;
+	resize:none;
+	vertical-align: top;
+	width:9em;
+	position:relative;
+	right:-1.25em;
+	height: 6.5em;
+	margin-left: -1.52em;
+	background-color: transparent;
+}
+
+#skillset{vertical-align: top;
+	overflow:hidden;
+	resize: none;
+	left: -4.2em;
+	margin-left: 3.95em;
+	height:8em;
+	border: 0px solid;
+	position: relative;
+	background-color: transparent;
+}
+
+.dashDisplay { display:none;
+
+}
+
+#leave-container, #location-container, #skill-container, #cert-container {
+	height: 13em;
+}
+
+.label{margin-left:1em;}
+
+ {border: 0px solid;
+	overflow:hidden;
+	resize:none;
+	vertical-align: top;
+	height: 8em;
+	width:11em;
+	position:relative;
+	left:-6.6em;
+	margin-left:6.3em;
+	background-color: transparent;
+}
+
+.leaveColumn{
+	padding-left:1em;
+}
+#dashOnLeave, #dashDateLeave, #dashDateReturn, #location1, #location2, #location3, #skills1, #skills2, #skills3, #certs1, #certs2, #certs3,
+#certs4 {border: 0px solid;
+	overflow:hidden;
+	resize:none;
+	vertical-align: top;
+	height: 8em;
+	width:11em;
+	position:relative;
+	background-color: transparent;
+}
+.modal-footer {height:6em;}
+
+#skill {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+		position: relative;
+}
+
+.expand {
+	position: relative;
+  right: -17em;
+}
+
+.expand2 {
+	position: relative;
+	right: -7.75em;
+}
+
+.expand3{
+	position: relative;
+	right: -17.15em;
+}
+
+.expand4 {
+	position: relative;
+	right: -6.75em;
+}
+
+.modal-body {
+	padding: 1px !important;
+	position:relative;
+	/* height: 7em; */
+}
+
+i.expand, i.expand2, i.expand3, i.expand4{
+	color:black;
+}
+
+/*-------------------------------------------------------------------*/
+
+#tableOne{
+	position:relative;
+	left:-1.15em;
+}
+
+#tableTwo{
+	position:relative;
+	right:1em;
+	}
+	
+.floatLeft{
+	float: left;
+}
+
+.inlineBlock{
+	display: inline-block;
+}
+
