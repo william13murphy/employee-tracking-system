@@ -1,4 +1,4 @@
-[
+data = [
   {
     "ID": "2",
     "Title": "Murphy",
@@ -252,4 +252,4 @@
     "CurrentlyEmployed": "1",
     "OnLeave": "0"
   }
-]
+];

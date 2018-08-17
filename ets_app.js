@@ -1,4 +1,5 @@
-var employeeRecord = new Array();
+//var employeeRecord = new Array();
+//let employeeRecord = JSON.parse(data);
 
 var locationRecord = new Array();
 var locationHeader = new Array();
@@ -12,8 +13,8 @@ var certHeader = new Array();
 function buildEmployeeRecordDataTable(){
 	var list = "employeeRecord";
 	var listcolumns = ["ID", "Title", "Contract", "FirstName", "BirthDate", "HireDate", "Address", "Address2", "City", "State", "ZipCode", "PhoneNumber", "CellPhone", "Email", "Position", "OfficeLocation", "Education", "Certification", "SkillSet", "Salary", "CurrentlyEmployed", "OnLeave", "DateLeave", "DateReturn"];
-	var listItems = getDataItems(list, listcolumns, true);
-	 employeeRecord = listItems;
+	//var listItems = getDataItems(list, listcolumns, true);
+	// employeeRecord = listItems;
 	var cleanTable = new Array();
 
 
@@ -200,8 +201,8 @@ function buildEmployeeLocationTable(){
 function loadLocationRecord(){
 	var list = "OfficeLocation";
 	var listcolumns = ["ID", "Title"];
-	var listItems = getDataItems(list, listcolumns, true);
-	locationRecord = listItems;
+	//var listItems = getDataItems(list, listcolumns, true);
+	//locationRecord = listItems;
 
 	for (var x=0;x<locationRecord.length;x++) {
 		locationHeader.push(locationRecord[x]["Title"]);
@@ -251,8 +252,8 @@ function buildEmployeeSkillTable(){
 function loadSkillRecord(){
 	var list = "SkillSet";
 	var listcolumns = ["ID", "Title"];
-	var listItems = getDataItems(list, listcolumns, true);
-	 skillRecord = listItems;
+	//var listItems = getDataItems(list, listcolumns, true);
+	// skillRecord = listItems;
 
 	 for (var x=0;x<skillRecord.length;x++) {
  		skillHeader.push(skillRecord[x]["Title"]);
@@ -300,8 +301,8 @@ function buildEmployeeCertTable(){
 function loadCertificationRecord(){
 	var list = "Certification";
 	var listcolumns = ["ID", "Title"];
-	var listItems = getDataItems(list, listcolumns, true);
-	 certRecord = listItems;
+	//var listItems = getDataItems(list, listcolumns, true);
+	// certRecord = listItems;
 
 	 for (var x=0;x<certRecord.length;x++) {
  		certHeader.push(certRecord[x]["Title"]);

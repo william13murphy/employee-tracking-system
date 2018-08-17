@@ -31,6 +31,7 @@
 	<link href="./sp-utility/DataTables/extensions/dataTables.tableTools.min.css" rel="stylesheet">
 
 	<!-- App references -->
+	<script src="data.json"></script>
 	<script src="ets_app.js"></script>
 </head>
 <body>
@@ -321,15 +322,16 @@
 
 
 <script>
+	let employeeRecord = JSON.parse(JSON.stringify(data));
 	$(document).ready(function(){
-		loadLookUpData();
-		buildEmployeeRecordDataTable();
-		buildEmployeeLocationTable();
-		buildEmployeeSkillTable();
-		buildEmployeeLeaveDataTable();
-		buildEmployeeCertTable();
-		buildCountInfo();
-		dashModalItem();
+		//loadLookUpData();
+		//buildEmployeeRecordDataTable();
+		//buildEmployeeLocationTable();
+		//buildEmployeeSkillTable();
+		//buildEmployeeLeaveDataTable();
+		//buildEmployeeCertTable();
+		//buildCountInfo();
+		//dashModalItem();
 
 	});
 </script>

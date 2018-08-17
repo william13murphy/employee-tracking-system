@@ -57,14 +57,15 @@ function getSPCurrentUser() {
 //        Be advised for referencing files :
 //         On List : '../../'
 //         On Page : '../'
+/*
 function getDataItems(list, listcolumns, ascending, cquery){
 	var ascend = 'TRUE';
 	var listName = list;
-	var siteURL = window.location.protocol+'//'+document.location.hostname+L_Menu_BaseUrl;
-	//var siteURL = 'http://'+document.location.hostname+L_Menu_BaseUrl;
+	//var siteURL = window.location.protocol+'//'+document.location.hostname+L_Menu_BaseUrl;
+	var siteURL = 'http://'+document.location.hostname+L_Menu_BaseUrl;
 	//var siteURL = '../';
 	//if (onForm==true) {siteURL = '../../';} // set if only being called from a SharePoint Form
-	var list = getList(siteURL, listName);
+	//var list = getList(siteURL, listName);
 	if (ascending==false) {ascend='FALSE';}
 	var qry = "<OrderBy><FieldRef Name='ID' Ascending='"+ascend+"' /></OrderBy>";
 	if (arguments.length==4) {qry = cquery;}  // use custom query if last argument is used
@@ -73,6 +74,7 @@ function getDataItems(list, listcolumns, ascending, cquery){
 
 	return listItems;
 }
+*/
 //---------------------------------------------------------------------------------------------//
 // Gets SharePoint data on separate Site
 // Parameter cquery is optional.
@@ -168,12 +170,14 @@ function getList (siteURL, listName){
 }
 //---------------------------------------------------------------------------------------------//
 // internal jPoint code
+/*
 function getListItems(list, qry, fieldarray){
 	var myResults = list.getSPItemsWithQuery(qry);
 	var listItems = myResults.getItemsFieldData(fieldarray);
 
 	return listItems;
 }
+*/
 //---------------------------------------------------------------------------------------------//
 // internal jPoint code
 // IBM's old way of doing it...doesn't work with chrome so it sucks
