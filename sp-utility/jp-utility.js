@@ -1,6 +1,7 @@
 
 var SP_site = window.location.protocol+'//'+document.location.hostname; // gets only the current Site
-//var SP_siteURL = _spPageContextInfo.webAbsoluteUrl; // the new one thats compatible with IE11
+/* ------- calls to SP result in ERRORS
+var SP_siteURL = _spPageContextInfo.webAbsoluteUrl; // the new one thats compatible with IE11
 // if undefined then use old method again
 if (SP_siteURL==undefined) {SP_siteURL = window.location.protocol+'//'+document.location.hostname+L_Menu_BaseUrl;}
 var SP_UserID  = _spPageContextInfo.userId;//_spUserId;
@@ -9,6 +10,7 @@ var SP_newDocLibURL = SP_siteURL+"/_layouts/new.aspx?FeatureId={00bfea71-e717-4e
 var SP_createURL = SP_siteURL+"/_layouts/create.aspx";
 var SP_templateGallery = SP_siteURL+"/_catalogs/lt/Forms/AllItems.aspx";
 var SP_createSiteTemplateURL = SP_siteURL+"_layouts/savetmpl.aspx";
+*/
 
 // force page to edit mode : ?ToolPaneView=2&pagemode=edit
 
@@ -22,13 +24,14 @@ var isBrowserChrome = !!window.chrome && !isOpera;              // Chrome 1+
 var isBrowserIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 
 // Check SharePoint Version
-var isSP2013 = (_spPageContextInfo.webUIVersion == 15);
-var isSP2010 = (_spPageContextInfo.webUIVersion == 4);
+//var isSP2013 = (_spPageContextInfo.webUIVersion == 15);
+//var isSP2010 = (_spPageContextInfo.webUIVersion == 4);
 
 // Configures DataTable...
 var DT_searching = false;
 var DT_paging = false;
 
+/*
 // requires SPServices to be included
 var SP_Usertitle = $().SPServices.SPGetCurrentUser({
 	fieldName: "Title",
@@ -40,6 +43,7 @@ var SP_Username = $().SPServices.SPGetCurrentUser({
 	fieldName: "Name",
 	debug: false
 	});
+*/
 //---------------------------------------------------------------------------------------------//
 // Will return the complete internal Sharepoint userid/name of the current logged in user
 // requires SPServices to be included
