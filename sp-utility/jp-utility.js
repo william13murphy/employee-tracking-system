@@ -1,6 +1,6 @@
 
 var SP_site = window.location.protocol+'//'+document.location.hostname; // gets only the current Site
-var SP_siteURL = _spPageContextInfo.webAbsoluteUrl; // the new one thats compatible with IE11
+//var SP_siteURL = _spPageContextInfo.webAbsoluteUrl; // the new one thats compatible with IE11
 // if undefined then use old method again
 if (SP_siteURL==undefined) {SP_siteURL = window.location.protocol+'//'+document.location.hostname+L_Menu_BaseUrl;}
 var SP_UserID  = _spPageContextInfo.userId;//_spUserId;
